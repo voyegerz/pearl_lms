@@ -1,11 +1,11 @@
 # Use official Python image
-FROM python:3.9
+FROM python:3.9-slim
 
 # Set the working directory
 WORKDIR /
 
 # Copy project files
-COPY . /
+# COPY . /
 
 # Install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
@@ -14,4 +14,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 EXPOSE 5000
 
 # Command to run the app
-CMD ["python", "path_planner.py"]
+ENTRYPOINT ["python", "path_planner.py"]
